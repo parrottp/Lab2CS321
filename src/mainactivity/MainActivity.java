@@ -61,9 +61,7 @@ public class MainActivity
         //Sorts and prints out arraylist 
         printArrayListInt(sorter.SequentialSort(storedFileInput));
         System.out.println("-------------------------------------------------");
-
     }
-    
     /**
      * Prints Integer ArrayList
      * @param input ArrayList<Integer>
