@@ -1,39 +1,76 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * MainActivity 
  */
 package mainactivity;
-import java.io.*;
 import java.util.*;
 import dataloader.*;
 import sorter.*;
 
-/**
- *
- * @author Payton Parrott
- */
+
 public class MainActivity
 {   
+    /**
+     * MainActivity
+     * @param args Input arguments
+     */
     public static void main(String[] args)
     {
-       DataLoader userInput = new UserInputLoader();
-       DataLoader fileLoader = new FileDataLoader();
-       Sorter sorter = new Sorter();
+        DataLoader userInput = new UserInputLoader();
+        DataLoader fileLoader = new FileDataLoader();
+        Sorter sorter = new Sorter();
        
-       ArrayList<Integer> input = fileLoader.convertArrayInt(fileLoader.convertArray(fileLoader.dataLoader()));
+        System.out.println("-------------------------------------------------");
+        System.out.println("This program sorts integers entered by the\nuser "
+               + ",and from 'data.txt'.");
+        System.out.println("-------------------------------------------------");
+        String user = userInput.dataLoader();
+        System.out.println("-------------------------------------------------");
        
-       for (int i : fileLoader.convertArrayInt(fileLoader.convertArray(fileLoader.dataLoader())))
-       {
+        //Converts and stores user input in ArrayList<Integer>
+        ArrayList<Integer> storedUserInput = userInput.convertArrayInt(
+               userInput.convertArray(user));
+        
+        //Converts and stores file input in ArrayList<Integer>
+        ArrayList<Integer> storedFileInput = fileLoader.convertArrayInt(
+                fileLoader.convertArray(fileLoader.dataLoader()));
+        
+        System.out.println("Unsorted user inputed integers: ");
+        
+        //prints out unsorted array list
+        printArrayListInt(storedUserInput);
+        
+        System.out.println("-------------------------------------------------");
+        System.out.println("Sorted user inputed integers: ");
+        
+        //Sorts and prints out arraylist
+        printArrayListInt(sorter.SequentialSort(storedUserInput));
+        
+        System.out.println("-------------------------------------------------");
+        System.out.println("-------------------------------------------------");
+        System.out.println("Unsorted integers from 'data.txt': ");
+        
+        //prints out unsorted array list
+        printArrayListInt(storedFileInput);
+        
+        System.out.println("-------------------------------------------------");
+        System.out.println("Sorted integers from 'data.txt': ");
+        
+        //Sorts and prints out arraylist 
+        printArrayListInt(sorter.SequentialSort(storedFileInput));
+        System.out.println("-------------------------------------------------");
+
+    }
+    
+    /**
+     * Prints Integer ArrayList
+     * @param input ArrayList<Integer>
+     */
+    public static void printArrayListInt(ArrayList<Integer> input)
+    {
+        for (int i : input)
+        {
            System.out.print(i + " ");
-           System.out.println(" ");
-       }
-       
-       for (int i : sorter.sort(input))
-       {
-           System.out.print(i + " ");
-       }
-       
-       
+        }
+        System.out.println(" ");
     }
 }

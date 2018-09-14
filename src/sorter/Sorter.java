@@ -1,4 +1,6 @@
-
+/**
+ * Sorter Class
+ */
 package sorter;
 import java.util.*;
 
@@ -6,11 +8,11 @@ public class Sorter
 {
 
     /**
-     *
-     * @param numList
-     * @return
+     * Sequential Sort
+     * @param numList 
+     * @return numList = sorted
      */
-    public ArrayList<Integer> sort(ArrayList<Integer> numList)
+    public ArrayList<Integer> SequentialSort(ArrayList<Integer> numList)
     {
         for (int i = 0; i < numList.size()-1; i++ )
         {
