@@ -1,11 +1,14 @@
-/*
- * MainActivity 
+/**
+ * Main Activity for DataLoader and Sorter
+ * 
+ * Payton Parrott 
+ * 
+ * CS321
  */
 package mainactivity;
 import java.util.*;
 import dataloader.*;
 import sorter.*;
-
 
 public class MainActivity
 {   

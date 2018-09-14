@@ -6,7 +6,6 @@ import java.util.*;
 
 public class Sorter
 {
-
     /**
      * Sequential Sort
      * @param numList 

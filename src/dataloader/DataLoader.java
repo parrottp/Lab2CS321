@@ -1,7 +1,6 @@
 package dataloader;
 import java.util.*;
 
-
 public interface DataLoader
 {
     /**

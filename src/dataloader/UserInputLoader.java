@@ -3,7 +3,6 @@ package dataloader;
 import java.util.ArrayList;
 import java.util.*;
 
-
 public class UserInputLoader implements DataLoader
 {
     /**
